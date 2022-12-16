@@ -17,3 +17,7 @@ print(res)
 f = open("./새파일2.csv", 'w')
 f.writelines(res)
 f.close()
+
+c = 6
+d = 8
+print(c+d)
