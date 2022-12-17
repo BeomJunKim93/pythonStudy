@@ -28,17 +28,24 @@ print(a+b)
 """
 a + b
 """
-
-number = 3
-day = 'three'
-a = "I eat %d apples in %s days." % (number, day)
-print(a)
-
-
+#
+# number = 3
+# day = 'three'
+# a = "I eat %d apples in %s days." % (number, day)
+# print(a)
+#
+#
 import os
 
 file_list = os.listdir('D:/Dropbox/Dropbox/Hongeun119/data')
 print(file_list)
+
+# find = file_list.index('취합1.xls')
+# print(find)
+#
+# find2 = file_list[2]
+# print(find2)
+
 
 def read_data(dir):
     f = open(dir, 'r')
@@ -46,12 +53,24 @@ def read_data(dir):
     f.close()
     return data
 
-data = read_data("D:/Dropbox/Dropbox/Hongeun119/data/%s" % file_list[5])
-data2 = read_data("D:/Dropbox/Dropbox/Hongeun119/data/%s" % file_list[6])
+excel1 = read_data("D:/Dropbox/Dropbox/Hongeun119/data/%s" % file_list[5])
+excel2 = read_data("D:/Dropbox/Dropbox/Hongeun119/data/%s" % file_list[6])
 
-res = data + data2[1:]
-print(res)
+print(excel1)
+print(excel2)
+#
+# res = data + data2[1:]
+# print(res)
+#
+# excel1.append(excel2[1:])
+# print(excel1)
+#
+# excel3 = excel1.insert(0,excel2[1:])
+# print(excel3) 이건 안되네
 
-f = open("D:/Dropbox/Dropbox/Hongeun119/data/취합1.xls", 'w')
-f.writelines(res)
-f.close()
+#
+# f = open("D:/Dropbox/Dropbox/Hongeun119/data/취합3.xls", 'w')
+# f.writelines(excel1)
+# f.close()
+
+
