@@ -1,41 +1,35 @@
+import openpyxl
 import pandas as pd
+import openpyxl as oxl
 import numpy as np
-import pyexcel
 import os
-# "D:/Dropbox/Dropbox/Hongeun119/data/파일명.xls", 노트북 주소
-# C:/Users/user/Dropbox/Hongeun119/data, 연구실 컴터 주소
-
-# obj = pd.Series([4,7,-5,3])
-# print(obj)
-# '''Series 정의하기'''
+# try1
+# def read_data(dir):
+#     f = open(dir, 'r')
+#     data = f.readlines()
+#     f.close()
+#     return data
 #
-# print(obj.values)
-# '''Series의 값만 확인'''
+# file_main = read_data("./5.북부여성발전센터.xlsx")
+# try2
+# wb = load_workbook('./pandas_study/5.북부여성발전센터.xlsx')
+# ws = wb.active
 #
-# print(obj.index)
-# '''인덱스만 확인'''
+# ws.unmerge_cells('A1:H1')
+#
+# df2 = pd.DataFrame(ws.unmerge_cells)
+# print(df2)
 
-file_list = os.listdir('C:/Users/user/Dropbox/Hongeun119/data')
-# df_file_list = pd.DataFrame(file_list)
-# print(df_file_list)
+# 엑셀 파일 불러오기
+file_main = './pandas_study/5.북부여성발전센터.xlsx'
+# 워크북 (파일 자체) 불러오기
+wb = openpyxl.load_workbook(file_main)
+# 워크시트 불러오기
+ws = wb['기본정보']
 
-def read_data(dir):
-    f = open(dir, 'r')
-    data = f.readlines()
-    f.close()
-    return data
+# 열 (Column) 값 확인하기
+for cell in ws['D']:
+    print(cell.value)
 
-excel1 = read_data("C:/Users/user/Dropbox/Hongeun119/data/%s" % file_list[5])
-excel2 = read_data("C:/Users/user/Dropbox/Hongeun119/data/%s" % file_list[6])
 
-df_test1 = pd.DataFrame(excel1)
-print(df_test1)
-df_test2 = pd.DataFrame(excel2)
-print(df_test2)
 
-res = excel1 + excel2[1:]
-df_res = pd.DataFrame(res)
-print(df_res)
-
-# excel1.append(excel2[1:])
-# print(excel1)
