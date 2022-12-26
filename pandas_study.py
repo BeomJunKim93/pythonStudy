@@ -89,15 +89,7 @@ for j in range(0, len(file_list)):
     ws.cell(row=looprow2, column=33).value = ws2.cell(row=32, column=5).value  # '가스 계량기 번호']
     looprow2 = looprow2 + 1
 
+# 저장
 wb.save("./sample.xlsx")
 
-
-
-
-
-
-# row_start = 2
-# for j in range(2,34):
-#     ws.cell(row = row_start, column = j) =
-#
-# wb.save("./sample.xlsx")
+print(wb)
